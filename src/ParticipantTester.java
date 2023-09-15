@@ -64,7 +64,7 @@ public class ParticipantTester {
 		}
 		
 		
-		
+		scanner.close();
 		
 	}
 	
