@@ -34,7 +34,7 @@ public class ParticipantTester {
 		//Selecting by National awards
 		
 		//Read the input for national awards selection
-		System.out.println("Desired amount of National awards: (Maximum of 2)");
+		System.out.println("Enter the number of National awards: (Maximum of 2)");
 		int nationalAwardSelection = Integer.parseInt(scanner.next());
 	
 		System.out.println("Selecting by National Awards;");
@@ -50,7 +50,7 @@ public class ParticipantTester {
 		//Selecting by international awards
 		
 		//Read the input for national awards selection
-		System.out.println("Desired amount of National awards: (Maximum of 2)");
+		System.out.println("Enter the number of international awards: (Maximum of 2)");
 		int internationalAwardSelection = Integer.parseInt(scanner.next());
 		
 		System.out.println("Selecting by international awards;");
@@ -102,7 +102,7 @@ public class ParticipantTester {
 		
 		for(int i = 0; i < pGroup.length; i++)
 		{
-			if( natAwardAmount == pGroup[i].getNationalAwards() )
+			if( natAwardAmount == pGroup[i].getNationalAwards().length )
 			{
 				selectionCount++;
 			}
@@ -114,7 +114,7 @@ public class ParticipantTester {
 		
 		for(int i = 0; i < pGroup.length; i++)
 		{
-			if( natAwardAmount == pGroup[i].getNationalAwards() )
+			if( natAwardAmount == pGroup[i].getNationalAwards().length)
 			{
 				selectedParticipants[index++] = pGroup[i];
 			}
@@ -131,7 +131,7 @@ public class ParticipantTester {
 	
 		for(int i = 0; i < pGroup.length; i++)
 		{
-			if( internationalAwardAmount == pGroup[i].getInternationalAwards() )
+			if( internationalAwardAmount == pGroup[i].getInternationalAwards().length )
 			{
 				selectionCount++;
 			}
@@ -143,7 +143,7 @@ public class ParticipantTester {
 		
 		for(int i = 0; i < pGroup.length; i++)
 		{
-			if( internationalAwardAmount == pGroup[i].getInternationalAwards() )
+			if( internationalAwardAmount == pGroup[i].getInternationalAwards().length )
 			{
 				selectedParticipants[index++] = pGroup[i];
 			}

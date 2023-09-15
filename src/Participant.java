@@ -1,12 +1,13 @@
 import java.util.Random;
+import java.util.Arrays;
 
 public class Participant {
     private String name;
     private String surname;
     private int age;
     private String sportType;
-    private int internationalAwards;
-    private int nationalAwards;
+    private String[] internationalAwards;
+    private String[] nationalAwards;
     
     //Constructor
     public Participant()
@@ -23,7 +24,7 @@ public class Participant {
     // Custom toString method to display participant information
     public String toString() {
         return "Name=" + name + ", Surname=" + surname + ", age=" + age + ", Sports=" + sportType + 
-        			", international awards " + internationalAwards + ", national awards=" + nationalAwards + "]";
+        			", international awards " + Arrays.toString(internationalAwards) + ", national awards=" + Arrays.toString(nationalAwards) + "]";
      
     }
     
@@ -59,19 +60,19 @@ public class Participant {
         this.sportType = sportType;
     }
 
-    public int  getNationalAwards() {
+    public String[]  getNationalAwards() {
         return nationalAwards;
     }
 
-    public void setNationalAwardss(int nationalAwardCount) {
+    public void setNationalAwardss(String[] nationalAwardCount) {
         this.nationalAwards = nationalAwardCount;
     }
     
-    public int  getInternationalAwards() {
+    public String[]  getInternationalAwards() {
         return internationalAwards;
     }
 
-    public void setInternationalAwards(int internationalAwardCount) {
+    public void setInternationalAwards(String[] internationalAwardCount) {
         this.internationalAwards = internationalAwardCount;
     }
     
@@ -125,23 +126,43 @@ public class Participant {
     }
     
     //Function for constructor to pick a random national awards number
-    public int randomNationalAwards() {
+    public String[] randomNationalAwards() {
     	Random rand = new Random();
+    	String[] medals = {"Gold","Silver","Bronze"};
+    	
+    	int index = 0;
     	
     	// Generate a random number of national awards (0 to 2)
     	int rNationalAwards = rand.nextInt(3);
     	
-    	return rNationalAwards;
+    	String[] tempNatAwards = new String[rNationalAwards];
+    	
+    	for(int i = 0 ; i < rNationalAwards ; i++)
+    	{
+    		tempNatAwards[index++] = medals[rand.nextInt(3)];
+    	}
+    	
+    	return tempNatAwards;
     }
     
   //Function for constructor to pick a random international awards number
-    public int randomInternationalAwards() {
+    public String[] randomInternationalAwards() {
     	Random rand = new Random();
+    	String[] medals = {"Gold","Silver","Bronze"};
+    	
+    	int index = 0;
     	
     	// Generate a random number of international awards (0 to 2)
     	int rIntertionalAwards = rand.nextInt(3);
     	
-    	return rIntertionalAwards;
+    	String[] tempIntAwards = new String[rIntertionalAwards];
+    	
+    	for(int i = 0 ; i < rIntertionalAwards ; i++)
+    	{
+    		tempIntAwards[index++] = medals[rand.nextInt(3)];
+    	}
+    	
+    	return tempIntAwards;
     }
     
 }
